@@ -14,13 +14,7 @@ var styles = {
   noMargin: {
     margin: '0px'
   },
-  headerWeatherSearch: {
-    display: 'flex',
-    flexDirection: 'row',
-    justifyContent: 'center',
-    alignItems: 'center',
-    maxWidth: '300px'
-  }
+
 }
 
 module.exports = styles;

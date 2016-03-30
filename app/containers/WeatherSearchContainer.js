@@ -27,6 +27,7 @@ var WeatherSearchContainer = React.createClass({
     this.setState({
       location: ''
     });
+    console.log('here');
     this.context.router.push({
       pathname: 'search/'+location
     });
