@@ -25,7 +25,7 @@ function getQueryStringData (city) {
 
 function getForecast (city) {
   var queryStringData = getQueryStringData(city);
-  var url = prepUrl('forecast/daily', queryStringData)
+  var url = prepUrl('forecast/daily', queryStringData);
 
   return axios.get(url)
     .then(function (forecastData) {
@@ -33,7 +33,18 @@ function getForecast (city) {
     })
 }
 
+function getWeather(city){
+  var queryStringData = getQueryStringData(city);
+  var url = prepUrl('weather', queryStringData);
+
+  return axios.get(url)
+    .then(function(forecastData) {
+      console.log(forecastData.data)
+    })
+}
+
 module.exports = {
-  getForecast: getForecast
+  getForecast: getForecast,
+  getWeather: getWeather
 }
 
