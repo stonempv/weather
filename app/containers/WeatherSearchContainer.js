@@ -1,5 +1,6 @@
 var React = require('react');
 var WeatherSearch = require('../components/WeatherSearch');
+var getForecast = require('../helpers/api').getForecast;
 
 var WeatherSearchContainer = React.createClass({
   contextTypes: {
@@ -27,10 +28,7 @@ var WeatherSearchContainer = React.createClass({
     this.setState({
       location: ''
     });
-    console.log('here');
-    this.context.router.push({
-      pathname: 'search/'+location
-    });
+    getForecast(location);
   },
   render: function(){
     return (

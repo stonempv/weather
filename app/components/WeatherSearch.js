@@ -14,11 +14,11 @@ function getStyles(props){
 function InputField(props){
   return (
     <input
-        className="form-control"
-        placeholder="Perth, Australia"
-        onChange={props.onUpdateWeatherSearch}
-        value={props.location}
-        type="text" />
+      className="form-control"
+      placeholder="Perth, Australia"
+      onChange={props.onUpdateWeatherSearch}
+      value={props.location}
+      type="text" />
   )
 }
 
