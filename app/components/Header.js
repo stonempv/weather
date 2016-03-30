@@ -5,7 +5,7 @@ var WeatherSearchContainer = require('../containers/WeatherSearchContainer');
 function Header(props) {
   return (
       <div style={styles.header}>
-        <h2 style={styles.noMargin}>Clever Title</h2>
+        <h2 style={styles.noMargin}>Mike's Weather App</h2>
         <WeatherSearchContainer />
       </div> 
   )

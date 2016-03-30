@@ -1,10 +1,18 @@
 var React = require('react');
-var styles = require('../styles')
 var PropTypes = React.PropTypes;
 
+var styles = {
+  display: 'flex',
+  flexDirection: 'row',
+  justifyContent: 'center',
+  alignItems: 'center',
+  maxWidth: '300px'
+}
+
 function WeatherSearch(props){
+  styles.flexDirection = props.flexDirection;
   return (
-    <div style={styles.headerWeatherSearch}>
+    <div style={styles}>
       <input
         className="form-control"
         placeholder="Perth, Australia"
@@ -29,4 +37,4 @@ WeatherSearch.propTypes = {
 }
 
 module.exports = WeatherSearch;
-
+ 

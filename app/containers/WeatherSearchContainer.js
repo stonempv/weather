@@ -5,9 +5,15 @@ var WeatherSearchContainer = React.createClass({
   contextTypes: {
     router: React.PropTypes.object.isRequired
   },
+  getDefaultProps: function(){
+    return({
+      flexDirection: 'row'
+    })
+  },
   getInitialState: function(){
     return ({
-      location: ''
+      location: '',
+      flexDirection: this.props.flexDirection
     })
   },
   handleUpdateWeatherSearch: function(e){
@@ -31,6 +37,7 @@ var WeatherSearchContainer = React.createClass({
         onSubmitWeatherSearch={this.handleSubmitWeatherSearch}
         onUpdateWeatherSearch={this.handleUpdateWeatherSearch}
         location={this.state.location}
+        flexDirection={this.state.flexDirection}
       />
     )
   }

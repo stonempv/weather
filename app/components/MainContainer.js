@@ -4,11 +4,9 @@ var Header = require('../components/Header')
 
 function MainContainer(props){
   return (
-    <div>
-      <Header />
-      <div className="jumbotron col-sm-12 text-center" style={styles.transparentBg}>
-        {props.children}
-      </div>
+    <div style={{width: '100%', height:'92%'}}>
+      <Header /> 
+      {props.children}
     </div>
   )
 }
