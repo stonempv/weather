@@ -1,7 +1,5 @@
 var React = require('react');
-var WeatherSearchContainer = require('../containers/WeatherSearchContainer');
-var ReactRouter = require('react-router');
-var Link = ReactRouter.Link;
+var GetCityContainer = require('../containers/GetCityContainer');
 
 var styles= {
   container: {
@@ -26,7 +24,7 @@ function Home(props){
       <div style={styles.container}>
         <h1 style={styles.header}>
             Enter a City and Region</h1>
-        <WeatherSearchContainer flexDirection='column'/>
+        <GetCityContainer flexDirection='column'/>
       </div>
   )
 }

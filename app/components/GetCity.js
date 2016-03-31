@@ -16,8 +16,8 @@ function InputField(props){
     <input
       className="form-control"
       placeholder="Perth, Australia"
-      onChange={props.onUpdateWeatherSearch}
-      value={props.location}
+      onChange={props.onUpdateGetCity}
+      value={props.city}
       type="text" />
   )
 }
@@ -28,32 +28,32 @@ function Button(props){
       className="btn btn-success"
       type="button"
       style={{margin:'10px'}}
-      onClick={props.onSubmitWeatherSearch}>
+      onClick={props.onSubmitGetCity}>
        Get Weather
     </button>
   )
 }
 
-function WeatherSearch(props){
+function GetCity(props){
   return (
     <div style={getStyles(props)}>
       <InputField
-        onUpdateWeatherSearch = {props.onUpdateWeatherSearch}
-        location = {props.location}
+        onUpdateGetCity = {props.onUpdateGetCity}
+        city = {props.city}
        />
       <Button 
-        onSubmitWeatherSearch = {props.onSubmitWeatherSearch}
+        onSubmitGetCity = {props.onSubmitGetCity}
       />
     </div>
   )
 }
 
-WeatherSearch.propTypes = {
-  location: PropTypes.string.isRequired,
+GetCity.propTypes = {
+  city: PropTypes.string.isRequired,
   flexDirection: PropTypes.string,
-  onUpdateWeatherSearch: PropTypes.func.isRequired,
-  onSubmitWeatherSearch: PropTypes.func.isRequired
+  onUpdateGetCity: PropTypes.func.isRequired,
+  onSubmitGetCity: PropTypes.func.isRequired
 }
 
-module.exports = WeatherSearch;
+module.exports = GetCity;
  

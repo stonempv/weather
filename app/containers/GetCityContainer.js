@@ -1,9 +1,9 @@
 var React = require('react');
-var WeatherSearch = require('../components/WeatherSearch');
+var GetCity = require('../components/GetCity');
 var getForecast = require('../helpers/api').getForecast;
 var getWeather = require('../helpers/api').getWeather;
 
-var WeatherSearchContainer = React.createClass({
+var GetCityContainer = React.createClass({
   contextTypes: {
     router: React.PropTypes.object.isRequired
   },
@@ -14,36 +14,36 @@ var WeatherSearchContainer = React.createClass({
   },
   getInitialState: function(){
     return ({
-      location: '',
+      city: '',
       flexDirection: this.props.flexDirection
     })
   },
-  handleUpdateWeatherSearch: function(e){
+  handleUpdateGetCity: function(e){
     this.setState({
-      location: e.target.value
+      city: e.target.value
     })
   },
-  handleSubmitWeatherSearch: function(e){
+  handleSubmitGetCity: function(e){
     e.preventDefault();
-    var location = this.state.location;
+    var city = this.state.city;
     this.setState({
-      location: ''
+      city: ''
     });
-    //getForecast(location);
+    getForecast(city);
     this.context.router.push({
-      pathname: 'forecast/'+location
+      pathname: 'forecast/'+city
     })
   },
   render: function(){
     return (
-      <WeatherSearch 
-        onSubmitWeatherSearch={this.handleSubmitWeatherSearch}
-        onUpdateWeatherSearch={this.handleUpdateWeatherSearch}
-        location={this.state.location}
+      <GetCity 
+        onSubmitGetCity={this.handleSubmitGetCity}
+        onUpdateGetCity={this.handleUpdateGetCity}
+        city={this.state.city}
         flexDirection={this.state.flexDirection}
       />
     )
   }
 });
 
-module.exports = WeatherSearchContainer;
+module.exports = GetCityContainer;
