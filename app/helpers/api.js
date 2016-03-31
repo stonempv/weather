@@ -26,9 +26,10 @@ function getQueryStringData (city) {
 function getForecast (city) {
   var queryStringData = getQueryStringData(city);
   var url = prepUrl('forecast/daily', queryStringData);
+
   return axios.get(url)
-    .then(function (forecastData) {
-      console.log(forecastData.data)
+    .then(function(weatherData){
+      return weatherData.data
     })
 }
 
@@ -37,8 +38,8 @@ function getWeather(city){
   var url = prepUrl('weather', queryStringData);
 
   return axios.get(url)
-    .then(function(forecastData) {
-      console.log(forecastData.data)
+    .then(function(weatherData){
+      return weatherData.data
     })
 }
 
